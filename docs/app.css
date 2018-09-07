@@ -1,14 +1,14 @@
 body, html {
-    height: 100%;
-    display: grid;
-  }
-  .YEAH {
-    font-size:18vh;
-    color: #9793A2;
-  }
-  .center {
-    margin: auto;
-  }
+  height: 100%;
+  display: grid;
+}
+.YEAH {
+  font-size:18vh;
+  color: #9793A2;
+}
+.center {
+  margin: auto;
+}
 
 html{height:100%;}
 body {
@@ -17,7 +17,6 @@ background:#D9FCFF;
 
 overflow:hidden;
 }
-
 
 .drop {
   background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
