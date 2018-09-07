@@ -1,7 +1,79 @@
 body, html {
+  margin: 0;
+  padding: 0;
   height: 100%;
   display: grid;
+  font-family: 'Montserrat', sans-serif;
 }
+
+#weather {
+  color: #a1dbff;
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  font-size: 5em;
+  z-index: 149;
+}
+
+.clouds {
+  width: 200x;
+  height: 300px;
+  position: absolute;
+}
+
+#YEAH-img {
+  z-index: 200;
+}
+#space-needle {
+  z-index: 150;
+}
+
+.cloud1 {
+  top: 0px;
+  z-index: 100;
+  fill: #eee;
+  /* Animation shorthand syntax order: name, duration, timing-function, delay, iteration-count, direction, fill-mode */
+  -webkit-animation: move 20s linear infinite;
+  -moz-animation: move 20s linear infinite;
+  -o-animation: move 20s linear infinite;
+  animation: move 20s linear infinite;
+}
+
+.cloud2 {
+  top: 130px;
+  z-index: 110;
+  fill: #eee;
+  -webkit-animation: move 35s linear 10s infinite backwards;
+  -moz-animation: move 35s linear 10s infinite backwards;
+  -o-animation: move 35s linear 10s infinite backwards;
+  animation: move 35s linear 10s infinite backwards;
+}
+
+.cloud3 {
+  top: 100px;
+  z-index: 200;
+  fill: #eee;
+  -webkit-animation: move 35s linear infinite;
+  -moz-animation: move 35s linear infinite;
+  -o-animation: move 35s linear infinite;
+  animation: move 35s linear infinite;
+}
+
+.cloud4 {
+  top: 80px;
+  z-index: 210;
+  fill: #eee;
+  -webkit-animation: move 20s linear 10s infinite backwards;
+  -moz-animation: move 20s linear 10s infinite backwards;
+  -o-animation: move 20s linear 10s infinite backwards;
+  animation: move 20s linear 10s infinite backwards;
+}
+
+@-webkit-keyframes move {
+  from {-webkit-transform: translateX(-400px);}
+  to {-webkit-transform: translateX(1350px);}
+}
+
 .YEAH {
   font-size:18vh;
   color: #9793A2;
@@ -14,7 +86,7 @@ html{
   height:100%;
 }
 body {
-  background-color: #D9FCFF;
+  background-color: rgb(203,235,255);
   overflow: hidden;
 }
 

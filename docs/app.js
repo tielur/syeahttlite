@@ -21,6 +21,7 @@ function getWeather(){
   $.ajax('http://api.wunderground.com/api/c6dc8e785d943109/conditions/q/WA/Seattle.json', {
     dataType: 'jsonp',
     success: function(json) {
+      temp = parseInt(json.current_observation.temp_f)
       if (json.current_observation.weather.toLowerCase().includes("rain")) {
         createRain(50);
       } else if (json.current_observation.weather.toLowerCase().includes("rain")){
@@ -29,8 +30,8 @@ function getWeather(){
         createRain(15);
       }
       // $('div#city strong').text(json.current_observation.display_location.full)
-      // $('div#icon').html('<img src=' + json.current_observation.icon_url + '>')
-      $('div#weather').text(json.current_observation.temperature_string + " " + json.current_observation.weather);
+      $('#icon').html('<img src=' + json.current_observation.icon_url + '>')
+      $('#weather').html(temp + "&deg;F " + json.current_observation.weather);
       // $('div#time').text(json.current_observation.observation_time_rfc822);
     }
   });
@@ -38,7 +39,7 @@ function getWeather(){
 
 jQuery(function($){
   getWeather();
-  $('#result').fadeIn(1000);
+  $('#result').fadeIn(5000);
 })
 
 document.getElementById("YEAH-img").addEventListener("click", function() {
