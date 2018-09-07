@@ -10,12 +10,21 @@ body, html {
   margin: auto;
 }
 
-html{height:100%;}
+html{
+  height:100%;
+}
 body {
-background:#D9FCFF;
+  background-color: #D9FCFF;
+  overflow: hidden;
+}
 
-
-overflow:hidden;
+#space-needle {
+  position: absolute;
+  bottom: -20%;
+  top: 15%;
+  height: inherit;
+  left: -10%;
+  right: auto;
 }
 
 .drop {
