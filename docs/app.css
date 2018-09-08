@@ -6,11 +6,17 @@ body, html {
   font-family: 'Montserrat', sans-serif;
 }
 
+#bigJ {
+  z-index: 148;
+  font-size: 19em;
+  color: #FBFDFC;
+}
+
 #weather {
   color: #a1dbff;
   position: absolute;
-  top: 3%;
-  right: 3%;
+  bottom: 2%;
+  right: 5%;
   font-size: 5em;
   z-index: 149;
 }
@@ -22,8 +28,13 @@ body, html {
 }
 
 #YEAH-img {
-  z-index: 200;
+  z-index: 145;
+  position: absolute;
+  top: 2%;
+  right: 7%;
+  height: 75%;
 }
+
 #space-needle {
   z-index: 150;
 }
