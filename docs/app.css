@@ -6,12 +6,17 @@ body, html {
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  background-color: rgb(203,235,255);
+  overflow: hidden;
+}
+
 #weather {
   color: #a1dbff;
-  position: absolute;
+  position: fixed;
   top: 3%;
   right: 3%;
-  font-size: 5em;
+  font-size: 10em;
   z-index: 149;
 }
 
@@ -23,10 +28,22 @@ body, html {
 
 #YEAH-img {
   z-index: 200;
+  position: fixed;
+  bottom: -1%;
+  right: -1%;
+  height: 75%;
 }
+
 #space-needle {
   z-index: 150;
+  position: fixed;
+  bottom: -20%;
+  top: 15%;
+  height: inherit;
+  left: -10%;
+  right: auto;
 }
+
 
 .cloud1 {
   top: 0px;
@@ -74,32 +91,8 @@ body, html {
   to {-webkit-transform: translateX(1350px);}
 }
 
-.YEAH {
-  font-size:18vh;
-  color: #9793A2;
-}
-.center {
-  margin: auto;
-}
-
-html{
-  height:100%;
-}
-body {
-  background-color: rgb(203,235,255);
-  overflow: hidden;
-}
-
-#space-needle {
-  position: absolute;
-  bottom: -20%;
-  top: 15%;
-  height: inherit;
-  left: -10%;
-  right: auto;
-}
-
 .drop {
+  z-index: 500;
   background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(rgba(255,255,255,0.6))  );
   background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
   width:1px;
