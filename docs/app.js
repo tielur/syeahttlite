@@ -33,13 +33,20 @@ function getWeather($){
   });
 }
 
+function playAudio(path) {
+  var audio = new Audio(path)
+  audio.play()
+}
+
 function addJeffClickListener($) {
   $("#YEAH-img").on("click", function() {
     img = $("#YEAH-img")
     if (img.attr("src").endsWith("YEAH.png")) {
       img.attr("src", "images/bigj.png")
+      playAudio("audio/baby.wav")
     } else {
       img.attr("src", "images/YEAH.png")
+      playAudio("audio/bigj.wav")
     }
   });
 }
