@@ -1,3 +1,6 @@
+var baby = new Audio("audio/baby.wav");
+var bigj = new Audio("audio/bigj.wav");
+
 // function to generate a random number range.
 function randRange(minNum, maxNum) {
   return (Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum);
@@ -33,20 +36,19 @@ function getWeather($){
   });
 }
 
-function playAudio(path) {
-  var audio = new Audio(path)
-  audio.play()
-}
-
 function addJeffClickListener($) {
   $("#YEAH-img").on("click", function() {
     img = $("#YEAH-img")
     if (img.attr("src").endsWith("YEAH.png")) {
-      img.attr("src", "images/bigj.png")
-      playAudio("audio/baby.wav")
+      img.attr("src", "images/bigj.png");
+      bigj.pause();
+      bigj.currentTime = 0;
+      baby.play();
     } else {
       img.attr("src", "images/YEAH.png")
-      playAudio("audio/bigj.wav")
+      baby.pause()
+      baby.currentTime = 0;
+      bigj.play()
     }
   });
 }
