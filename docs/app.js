@@ -15,38 +15,44 @@ function createRain(nbDrop) {
   }
 }
 
-function getWeather(){
-  // Docs
-  // https://www.wunderground.com/weather/api/d/docs?d=resources/phrase-glossary#current_condition_phrases
-  $.ajax('http://api.wunderground.com/api/c6dc8e785d943109/conditions/q/WA/Seattle.json', {
+function getWeather($){
+  $.ajax('https://api.darksky.net/forecast/a3ed457f962302fa6e93a0831a96d96b/37.8267,-122.4233', {
     dataType: 'jsonp',
     success: function(json) {
-      temp = parseInt(json.current_observation.temp_f)
-      if (json.current_observation.weather.toLowerCase().includes("rain")) {
-        createRain(50);
-      } else if (json.current_observation.weather.toLowerCase().includes("rain")){
-        createRain(20);
-      } else {
-        createRain(15);
+      temp = parseInt(json.currently.temperature);
+      weather = json.currently.summary
+      if (json.currently.precipType === "rain") {
+        if (json.currently.precipIntensity) {
+          createRain(json.currently.precipIntensity*1666);
+        } else {
+          createRain(15);
+        }
       }
-      // $('div#city strong').text(json.current_observation.display_location.full)
-      $('#icon').html('<img src=' + json.current_observation.icon_url + '>')
-      $('#weather').html(temp + "&deg;F " + json.current_observation.weather);
-      // $('div#time').text(json.current_observation.observation_time_rfc822);
+      $('#weather').html(temp + "&deg;F " + weather);
+    }
+  });
+}
+
+function playAudio(path) {
+  var audio = new Audio(path)
+  audio.play()
+}
+
+function addJeffClickListener($) {
+  $("#YEAH-img").on("click", function() {
+    img = $("#YEAH-img")
+    if (img.attr("src").endsWith("YEAH.png")) {
+      img.attr("src", "images/bigj.png")
+      playAudio("audio/baby.wav")
+    } else {
+      img.attr("src", "images/YEAH.png")
+      playAudio("audio/bigj.wav")
     }
   });
 }
 
 jQuery(function($){
-  getWeather();
+  getWeather($);
   $('#result').fadeIn(5000);
+  addJeffClickListener($)
 })
-
-document.getElementById("YEAH-img").addEventListener("click", function() {
-  img = document.getElementById("YEAH-img")
-  if (img.src.endsWith("images/YEAH.png")) {
-    img.src = "images/jeff.png"
-  } else {
-    img.src = "images/YEAH.png"
-  }
-});
