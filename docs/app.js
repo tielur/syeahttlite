@@ -19,7 +19,7 @@ function createRain(nbDrop) {
 }
 
 function getWeather($){
-  $.ajax('https://api.darksky.net/forecast/a3ed457f962302fa6e93a0831a96d96b/37.8267,-122.4233', {
+  $.ajax('https://api.darksky.net/forecast/a3ed457f962302fa6e93a0831a96d96b/47.574310,-122.400190', {
     dataType: 'jsonp',
     success: function(json) {
       temp = parseInt(json.currently.temperature);
